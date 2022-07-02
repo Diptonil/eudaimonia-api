@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from api.views import get_mood_view, get_movie_view
+from api.views import get_mood_view, get_movie_view, get_emotion_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get_mood/', view=get_mood_view, name='get_mood'),
-    path('get_movie/', view=get_movie_view, name='get_movie'),
+    path('api/v1/get_mood/', view=get_mood_view, name='get_mood'),
+    path('api/v1/get_emotion/', view=get_emotion_view, name='get_emotion'),
+    path('api/v1/get_movie/', view=get_movie_view, name='get_movie'),
 ]
