@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qt6a9mghkcn#r^(cjm93r%4n@vzlephd4cthvr+g%l60_fmg--
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eudaimonia-api-mkkyqnyg4a-uc.a.run.app']
 
 
 # Application definition
