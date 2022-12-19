@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qt6a9mghkcn#r^(cjm93r%4n@vzlephd4cthvr+g%l60_fmg--'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['eudaimonia-api-mkkyqnyg4a-uc.a.run.app']
 CSRF_TRUSTED_ORIGINS = ['eudaimonia-api-mkkyqnyg4a-uc.a.run.app']
