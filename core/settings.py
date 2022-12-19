@@ -129,10 +129,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework_api_key.permissions.HasAPIKey",
-    ],
-}
+# REST_FRAMEWORK = {
+#     "DEFAULT_PERMISSION_CLASSES": [
+#         "rest_framework_api_key.permissions.HasAPIKey",
+#     ],
+# }
 
-TEST_API_KEY = 'WNTDnKHs.bd9VaRno8zsc2S6r4l4owTFgLBnijakI'
+# TEST_API_KEY = 'WNTDnKHs.bd9VaRno8zsc2S6r4l4owTFgLBnijakI'
