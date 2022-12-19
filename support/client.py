@@ -2,14 +2,14 @@ import requests
 
 '''
 # Emotion Analysis
-headers = {'Authorization': 'Api-Key %s' % 'WNTDnKHs.bd9VaRno8zsc2S6r4l4owTFgLBnijakI'}
-corpus = 'They fuck you up, your mum and dad.\
+headers = {"Authorization": "Api-Key %s" % "WNTDnKHs.bd9VaRno8zsc2S6r4l4owTFgLBnijakI"}
+corpus = "They fuck you up, your mum and dad.\
 They may not mean to, but they do.\
 They fill you with the faults they had\
-And add some extra, just for you.'
+And add some extra, just for you."
 request = requests.post('http://127.0.0.1:7000/api/v1/get_mood/', json={'CORPUS': corpus}, headers=headers)
 print(request.json())
-request = requests.post('http://127.0.0.1:7000/api/v1/get_emotion/', json={'CORPUS': corpus}, headers=headers)
+request = requests.post('http://127.0.0.1:7000/s', json={'CORPUS': corpus}, headers=headers)
 print(request.json())
 
 # Movie Recommendation

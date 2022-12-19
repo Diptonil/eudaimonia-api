@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-qt6a9mghkcn#r^(cjm93r%4n@vzlephd4cthvr+g%l60_fmg--
 DEBUG = True
 
 ALLOWED_HOSTS = ['eudaimonia-api-mkkyqnyg4a-uc.a.run.app']
-
+CSRF_TRUSTED_ORIGINS = ['eudaimonia-api-mkkyqnyg4a-uc.a.run.app']
 
 # Application definition
 
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -122,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
