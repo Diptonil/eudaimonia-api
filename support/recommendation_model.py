@@ -49,8 +49,8 @@ def predict_movies(liked_movies, disliked_movies, favourites, mood=None):
         disliked += 'Horror|Crime|'
     if mood == 'Sad':
         disliked += 'War|'
-    credits_dataframe = pandas.read_csv('support\\tmdb_5000_credits.csv')
-    movies_dataframe = pandas.read_csv('support\\tmdb_5000_movies.csv')
+    credits_dataframe = pandas.read_csv('support/tmdb_5000_credits.csv')
+    movies_dataframe = pandas.read_csv('support/tmdb_5000_movies.csv')
     movies_dataframe = movies_dataframe[movies_dataframe['vote_average'] > 6.5]
     movies_dataframe = movies_dataframe[movies_dataframe['popularity'] > 40]
     movies_dataframe = movies_dataframe[movies_dataframe['genres'].str.contains(liked[:-1])]

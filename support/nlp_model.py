@@ -18,7 +18,7 @@ def predict_mood(corpus):
 
 
 def predict_emotion(corpus):
-    dataset = pandas.read_csv('support\\isear.csv', header=None, names=('Emotion', 'Text', 'NaN'))
+    dataset = pandas.read_csv('support/isear.csv', header=None, names=('Emotion', 'Text', 'NaN'))
     dataset.drop(dataset.columns[2], axis=1, inplace=True)
     stemmer = PorterStemmer()
     words = stopwords.words('english')
