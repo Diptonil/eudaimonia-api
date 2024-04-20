@@ -2,6 +2,8 @@ import json
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from transformers import BertTokenizer, BertForSequenceClassification
+import numpy as np
 
 from support.nlp_model import predict_mood, predict_emotion
 from support.recommendation_model import predict_movies
@@ -22,6 +24,22 @@ def get_emotion_view(request):
     response = predict_emotion(request_data['CORPUS'])
     serializer = EmotionDetectionSerializer(response)
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+def view(request, diary_entry):
+    model_name = 'bert-base-uncased'
+    diary_entry = ""
+    tokenizer = BertTokenizer.from_pretrained(model_name)
+    model = BertForSequenceClassification.from_pretrained('fine_tuned_bert_model') 
+    inputs = tokenizer(diary_entry, return_tensors='pt', truncation=True, padding=True)
+    emotions = ['happiness', 'sadness', 'surprise', 'fear', 'anger']
+    with tokenizer.as_target_tokenizer():
+        outputs = model(**inputs)
+    logits = outputs.logits
+    probabilities = np.exp(logits.numpy()) / np.exp(logits.numpy()).sum(axis=1, keepdims=True)
+    emotion_percentages = {emotion: probability for emotion, probability in zip(emotions, probabilities[0])}
+    return emotion_percentages
 
 
 @api_view(['POST'])
